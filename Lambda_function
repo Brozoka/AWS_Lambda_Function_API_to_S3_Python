@@ -13,10 +13,10 @@ def lambda_handler(event, context):
     http = urllib3.PoolManager()
 
     #get the text data from the API
-    covid_text = http.request('GET', 'API Link')
+    api_data = http.request('GET', 'API Link')
 
     #convert it to a JSON dictionary
-    data = json.loads(covid_text.data)
+    data = json.loads(api_data.data)
 
     #datetime for the unique file name
     dateTimeObj = datetime.now()
